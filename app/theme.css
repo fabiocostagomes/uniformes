@@ -1,0 +1,41 @@
+:root {
+  color-scheme: light;
+
+  /* Colors */
+  --color-bg: #f7faf7;
+  --color-surface: #ffffff;
+  --color-text: #1f2933;
+  --color-muted: #5b6875;
+  --color-brand: #2f6f4e;
+  --color-brand-strong: #24563c;
+  --color-accent: #dcefe3;
+  --color-border: #d7e3db;
+  --color-danger: #b64b4b;
+  --color-overlay: rgba(17, 24, 39, 0.12);
+
+  /* Typography */
+  --font-family-base: "Atkinson Hyperlegible", "Segoe UI", sans-serif;
+  --font-size-caption: 0.875rem;
+  --font-size-body: 1rem;
+  --font-size-subtitle: 1.25rem;
+  --font-size-title: clamp(1.4rem, 4vw, 1.9rem);
+  --line-height-title: 1.15;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.25rem;
+  --space-5: 1.5rem;
+
+  /* Radius */
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.25rem;
+
+  /* Shadows */
+  --shadow-card: 0 16px 35px var(--color-overlay);
+}
+

@@ -112,6 +112,65 @@ Preencher quando a sessao parar:
 - Devices alvo de QA manual: iPhone SE (375 px) e Android comum (360 px).
 - Tempo alvo de carregamento em rede 4G: primeira pagina util em <= 3s.
 
+## Design System MVP (Minimalista, Seguro, Sustentavel)
+
+Direcao recomendada: visual calmo, limpo e funcional, com foco em confianca entre pais e mensagem de reutilizacao responsavel.
+
+### Principios visuais
+
+- Minimalismo pratico: menos elementos, hierarquia clara, sem ruido visual.
+- Confianca: layout previsivel, linguagem direta, estados sempre explicitos.
+- Sustentabilidade: tons naturais suaves, mensagens de reutilizacao e impacto positivo.
+- Clareza mobile-first: acoes principais sempre visiveis sem scroll excessivo.
+
+### Tokens de design (base)
+
+- Fonte unica de verdade dos tokens: `app/theme.css` (cores, tipografia, espacamento, radius, sombras).
+- `app/globals.css` deve apenas consumir `var(--token)` e nunca definir hex/typography hardcoded.
+- `--bg`: `#F7FAF7` (fundo claro natural)
+- `--surface`: `#FFFFFF` (cards e modais)
+- `--text`: `#1F2933` (texto principal)
+- `--muted`: `#5B6875` (texto secundario)
+- `--brand`: `#2F6F4E` (acao primaria, tom verde confiavel)
+- `--brand-strong`: `#24563C` (hover/active)
+- `--accent`: `#DCEFE3` (realces suaves)
+- `--border`: `#D7E3DB` (bordas discretas)
+- `--danger`: `#B64B4B` (acoes destrutivas)
+
+### Tipografia e espacamento
+
+- Fonte principal: `Atkinson Hyperlegible`, fallback para `Segoe UI`, sans-serif.
+- Escala simples: `14 / 16 / 20 / 28`.
+- Espacamento em escala de 8px: `8, 16, 24, 32`.
+- Cards com cantos suaves (`12-16px`) e sombra leve, nunca agressiva.
+
+### Componentes-chave
+
+- Card de anuncio: foto principal, tamanho, estado, preco, CTA WhatsApp.
+- Badges de estado (`active`, `reserved`, `sold`) com cores suaves e legiveis.
+- Botao primario consistente em toda a app (`brand`), altura minima 44px.
+- Navegacao simples sem mega-menu; maximo 4 acoes primarias por ecran.
+
+### Motion e feedback
+
+- Animacoes subtis (`120-180ms`) apenas para foco, hover e carregamento.
+- Evitar animacoes decorativas longas.
+- Skeleton/loading simples para listas de anuncios.
+
+### Conteudo e tom
+
+- Microcopy objetiva: "Anunciar uniforme", "Contactar no WhatsApp", "Reservado".
+- Evitar linguagem agressiva de marketplace; manter tom comunitario.
+- Reforcar sustentabilidade com frases curtas (ex.: "Dar uma segunda vida ao uniforme").
+
+### Checklist de aceitacao de design
+
+- [ ] Interface passa "scan test" em 5 segundos (utilizador percebe onde anunciar e onde contactar).
+- [ ] Contraste minimo WCAG AA para texto e botoes principais.
+- [ ] CTA primaria visivel sem scroll no mobile.
+- [ ] Estados de anuncio distintos e consistentes em toda a app.
+- [ ] Mensagem de sustentabilidade presente sem poluir a interface.
+
 ## Estados de anuncio (MVP)
 
 - `active`: visivel para membros autenticados da escola.
@@ -459,6 +518,7 @@ Expected: FAIL.
 **Step 3: Implementar paginas**
 
 - Mostrar telefone apenas para utilizadores autenticados e garantir UX mobile (cards, botoes, espacamento).
+- Aplicar o `Design System MVP` (cores, estados, microcopy e hierarquia visual).
 
 **Step 4: Validar sucesso**
 Run: `pnpm test:e2e -- listings.spec.ts`

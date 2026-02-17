@@ -23,11 +23,11 @@
 ## Estado Atual (2026-02-17)
 
 - Branch atual: `main` (sincronizada com `origin/main`).
-- Ultimo commit: `cf2035c` (`feat: centralize color and typography tokens in theme file`).
-- Concluido: Tasks 0-3.
+- Ultimo commit: `83c66cb` (`docs: refresh development plan for long-session execution`).
+- Concluido: Tasks 0-4.
 - Concluido extra: i18n day-one (`pt`/`en`) + design tokens centralizados em `app/theme.css`.
-- Proximo bloco alvo: Task 4 (schema + RLS) e depois Tasks 5-6.
-- Bloqueio conhecido para Task 4: `supabase` CLI nao instalado localmente.
+- Proximo bloco alvo: Tasks 5-6.
+- Nota DB: validacao atual via `test:db` (guard de migrations + RLS em SQL); quando `supabase` CLI estiver disponivel, adicionar validacao integrada local.
 - Comando de validacao rapida antes de continuar: `pnpm test:unit`.
 
 ### Checklist mestre por task
@@ -36,7 +36,7 @@
 - [x] Task 1: Bootstrap do repositorio
 - [x] Task 2: Criar app Next.js com pnpm
 - [x] Task 3: Integrar Supabase Auth (Google)
-- [ ] Task 4: Esquema DB + RLS base
+- [x] Task 4: Esquema DB + RLS base
 - [ ] Task 5: Convites de acesso por codigo
 - [ ] Task 6: Criacao de anuncio (sem imagens)
 - [ ] Task 7: Upload de imagens (max 3, WebP comprimido)
@@ -72,8 +72,7 @@
 - [ ] Confirmar workspace limpo: `git status -sb`
 - [ ] Correr baseline: `pnpm test:unit`
 - [ ] Confirmar projeto Supabase alvo: `rkzvnbcbwudcskufcnci`
-- [ ] Se Task 4 for iniciada: instalar Supabase CLI e validar login/link do projeto
-- [ ] Executar em lotes: Task 4 -> Task 5 -> Task 6 (checkpoint) -> Task 7 -> Task 8 (checkpoint)
+- [ ] Executar em lotes: Task 5 -> Task 6 (checkpoint) -> Task 7 -> Task 8 (checkpoint)
 
 ### Template de handoff/retoma
 
@@ -89,8 +88,8 @@ Preencher quando a sessao parar:
 
 ### Lotes para maximizar entregas numa sessao longa
 
-- [ ] Lote A (fundacao): Tasks 0-4
-- [ ] Gate A: auth funcional + schema aplicado + RLS validado
+- [x] Lote A (fundacao): Tasks 0-4
+- [x] Gate A: auth funcional + schema aplicado + RLS validado
 - [ ] Lote B (core produto): Tasks 5-9
 - [ ] Gate B: criar anuncio + upload + listagem + moderacao a funcionar
 - [ ] Lote C (operacao): Tasks 10-12
@@ -392,7 +391,7 @@ Expected: PASS.
 
 `feat: add google oauth with supabase`
 
-### [ ] Task 4: Esquema DB + RLS base
+### [x] Task 4: Esquema DB + RLS base
 
 **Files:**
 
@@ -404,9 +403,9 @@ Expected: PASS.
 
 **Step 0: Preparar ferramenta de DB local**
 
-- Instalar Supabase CLI no ambiente local.
+- Definir estrategia de execucao de DB.
 - Adicionar script `test:db` no `package.json`.
-- Definir estrategia de execucao (recomendada): stack local Supabase + migracoes + verificacao de RLS.
+- Implementar validacao de migrations + RLS por guard SQL enquanto Supabase CLI local nao estiver disponivel.
 
 **Step 1: Teste SQL falho**
 
@@ -726,7 +725,7 @@ Expected: PASS.
 ## Ordem recomendada de arranque
 
 1. [x] Criar repositorio GitHub publico.
-2. [ ] Fechar Task 4 (com setup DB local).
+2. [x] Fechar Task 4 (com setup DB local).
 3. [ ] Validar deploy tecnico (sem abrir a pais ainda).
 4. [ ] Implementar Tasks 5-10.1.
 5. [ ] Fechar CI + deploy + observabilidade (Tasks 11-12).

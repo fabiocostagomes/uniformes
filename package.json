@@ -9,8 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
-    "test:unit": "vitest run",
-    "test:db": "vitest run tests/db/schema-guard.test.ts"
+    "test:unit": "vitest run tests/unit tests/smoke tests/db",
+    "test:db": "vitest run tests/db/schema-guard.test.ts",
+    "test:e2e": "vitest run tests/e2e"
   },
   "dependencies": {
     "next": "^15.5.6",

@@ -114,11 +114,11 @@ export async function uploadListingImagesAction(formData: FormData) {
   );
 
   if (!allowed) {
-    return { ok: false, error: 'rate_limited' as const };
+    return;
   }
 
   // Placeholder until browser File handling + Supabase Storage integration.
-  return prepareListingImages({
+  await prepareListingImages({
     listingId,
     files: [],
     transformer: defaultImageTransformer,
@@ -126,4 +126,3 @@ export async function uploadListingImagesAction(formData: FormData) {
 }
 
 export type { ImageTransformer };
-

@@ -13,19 +13,32 @@ export default function HomePageContent({ locale }: HomePageContentProps) {
   const googleAuthUrl = buildGoogleAuthUrl();
 
   return (
-    <main className="page">
-      <section className="card" aria-label="Hero">
+    <main className="marketing-page">
+      <section className="marketing-card" aria-label="Apresentacao da iniciativa">
         <nav className="locale-switcher" aria-label="Language">
           <a href="/pt">{content.ptLabel}</a>
           <a href="/en">{content.enLabel}</a>
         </nav>
+
+        <p className="hero-kicker">{content.initiative}</p>
         <h1 className="title">{content.heading}</h1>
         <p className="lead">{content.description}</p>
-        <a className="cta" href={googleAuthUrl}>
-          {content.cta}
-        </a>
+
+        <div className="hero-actions">
+          <a className="cta" href={googleAuthUrl}>
+            {content.cta}
+          </a>
+        </div>
+
+        <section className="how-it-works" aria-label={content.howItWorksTitle}>
+          <h2 className="subtitle">{content.howItWorksTitle}</h2>
+          <ul className="steps-list">
+            {content.howItWorksSteps.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ul>
+        </section>
       </section>
     </main>
   );
 }
-

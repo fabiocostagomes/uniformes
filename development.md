@@ -24,9 +24,9 @@
 
 - Branch atual: `main` (sincronizada com `origin/main`).
 - Ultimo commit: `59dc0e8` (`feat: add constrained image uploads`).
-- Concluido: Tasks 0-7.
+- Concluido: Tasks 0-8.
 - Concluido extra: i18n day-one (`pt`/`en`) + design tokens centralizados em `app/theme.css`.
-- Proximo bloco alvo: Tasks 8-9.
+- Proximo bloco alvo: Task 9.
 - Nota DB: validacao atual via `test:db` (guard de migrations + RLS em SQL); quando `supabase` CLI estiver disponivel, adicionar validacao integrada local.
 - Comando de validacao rapida antes de continuar: `pnpm test:unit`.
 
@@ -40,7 +40,7 @@
 - [x] Task 5: Convites de acesso por codigo
 - [x] Task 6: Criacao de anuncio (sem imagens)
 - [x] Task 7: Upload de imagens (max 3, WebP comprimido)
-- [ ] Task 8: Lista de anuncios + detalhe + contacto WhatsApp
+- [x] Task 8: Lista de anuncios + detalhe + contacto WhatsApp
 - [ ] Task 9: Moderacao minima por admin
 - [ ] Task 10: Politicas de privacidade e docs OSS
 - [ ] Task 10.1: Direitos de apagamento de dados
@@ -72,7 +72,7 @@
 - [ ] Confirmar workspace limpo: `git status -sb`
 - [ ] Correr baseline: `pnpm test:unit`
 - [ ] Confirmar projeto Supabase alvo: `rkzvnbcbwudcskufcnci`
-- [ ] Executar em lotes: Task 8 -> Task 9 (checkpoint) -> Task 10 -> Task 10.1 (checkpoint)
+- [ ] Executar em lotes: Task 9 (checkpoint) -> Task 10 -> Task 10.1 (checkpoint)
 
 ### Template de handoff/retoma
 
@@ -524,7 +524,7 @@ Expected: PASS.
 **Step 5: Commit**
 `feat: add constrained image uploads`
 
-### [ ] Task 8: Lista de anuncios + detalhe + contacto WhatsApp
+### [x] Task 8: Lista de anuncios + detalhe + contacto WhatsApp
 
 **Files:**
 

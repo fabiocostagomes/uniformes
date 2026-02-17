@@ -12,6 +12,14 @@
   --color-border: #d7e3db;
   --color-danger: #b64b4b;
   --color-overlay: rgba(17, 24, 39, 0.12);
+  --color-bg-highlight-a: #edf5ef;
+  --color-image-placeholder: #edf4ef;
+  --color-status-neutral-bg: #edf2f7;
+  --color-status-neutral-text: #3f4d5a;
+  --color-status-active-bg: #e9f6ee;
+  --color-status-active-text: #1f5a3a;
+  --color-status-reserved-bg: #f8f3e7;
+  --color-status-reserved-text: #7a5b21;
 
   /* Typography */
   --font-family-base: "Atkinson Hyperlegible", "Segoe UI", sans-serif;
@@ -38,4 +46,3 @@
   /* Shadows */
   --shadow-card: 0 16px 35px var(--color-overlay);
 }
-

@@ -117,9 +117,8 @@ export async function redeemInviteAction(formData: FormData) {
   const profileId = String(formData.get('profileId') ?? 'anonymous');
   const ip = String(formData.get('ip') ?? '');
 
-  return redeemInvite(
+  await redeemInvite(
     { code, profileId, ip },
     { repo: noopRepo, rateLimiter: memoryRateLimiter },
   );
 }
-

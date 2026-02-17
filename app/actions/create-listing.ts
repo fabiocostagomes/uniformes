@@ -106,7 +106,7 @@ export async function createListingAction(formData: FormData) {
   const priceRaw = String(formData.get('priceCents') ?? '').trim();
   const priceCents = priceRaw ? Number(priceRaw) : undefined;
 
-  return createListing(
+  await createListing(
     {
       schoolId: String(formData.get('schoolId') ?? ''),
       ownerId: String(formData.get('ownerId') ?? ''),
@@ -121,4 +121,3 @@ export async function createListingAction(formData: FormData) {
     { repo: noopRepo, rateLimiter: memoryRateLimiter },
   );
 }
-

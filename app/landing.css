@@ -1,5 +1,5 @@
 /* ==========================================================================
-   V2 — "Ciclo Verde" homepage variant
+   Landing page — "Ciclo Verde" design
    Geometric / circular-economy motif · Muji-meets-sustainability aesthetic
    ========================================================================== */
 
@@ -58,48 +58,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-}
-
-/* ==========================================================================
-   Version nav — fixed top-right pill with glassmorphism
-   ========================================================================== */
-.v2-version-nav {
-  position: fixed;
-  top: 1.25rem;
-  right: 1.25rem;
-  z-index: 100;
-  display: flex;
-  gap: 0.35rem;
-  padding: 0.3rem;
-  border-radius: var(--v2-radius-pill);
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(47, 111, 78, 0.12);
-  box-shadow: 0 2px 12px rgba(26, 58, 42, 0.06);
-}
-
-.v2-version-nav a {
-  display: grid;
-  place-items: center;
-  width: 2.1rem;
-  height: 2.1rem;
-  border-radius: 50%;
-  font-family: var(--v2-font);
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--v2-green);
-  transition: background var(--v2-transition), color var(--v2-transition);
-}
-
-.v2-version-nav a:hover {
-  background: rgba(47, 111, 78, 0.08);
-}
-
-.v2-version-nav a[aria-current='page'] {
-  background: var(--v2-green);
-  color: var(--v2-white);
 }
 
 /* ==========================================================================

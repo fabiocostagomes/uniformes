@@ -1,45 +1,65 @@
 import type { Locale } from './locales';
 
+type StepMessage = {
+  title: string;
+  text: string;
+};
+
 type HomeMessages = {
-  heading: string;
+  kicker: string;
+  headlineBold: string;
+  headlineLight: string;
   description: string;
-  initiative: string;
-  howItWorksTitle: string;
-  howItWorksSteps: [string, string, string];
   cta: string;
+  stepsTitle: string;
+  steps: [StepMessage, StepMessage, StepMessage];
+  bottomText: string;
+  bottomCta: string;
   ptLabel: string;
   enLabel: string;
 };
 
 const homeMessages: Record<Locale, HomeMessages> = {
   pt: {
-    heading: 'Uniformes do Colégio',
+    kicker: 'Uniformes do Colégio',
+    headlineBold: 'Fecha o ciclo.',
+    headlineLight: 'Partilha uniformes.',
     description:
-      'Troca e venda de uniformes usados entre pais, com foco em confiança e simplicidade.',
-    initiative: 'Iniciativa comunitária e sustentável.',
-    howItWorksTitle: 'Como funciona',
-    howItWorksSteps: [
-      '1. Entras com Google e validas o acesso da escola.',
-      '2. Publicas o teu anúncio com fotos comprimidas em WebP.',
-      '3. Contactas diretamente no WhatsApp para combinar.',
-    ],
+      'Uma plataforma comunitária para dar nova vida aos uniformes escolares, de família para família.',
     cta: 'Entrar com Google',
+    stepsTitle: 'Três passos simples',
+    steps: [
+      { title: 'Valida', text: 'Entras com Google e confirmas a tua escola.' },
+      {
+        title: 'Publica',
+        text: 'Crias o teu anúncio com fotos do uniforme.',
+      },
+      { title: 'Combina', text: 'Contactas diretamente no WhatsApp.' },
+    ],
+    bottomText: 'Economia circular começa na escola.',
+    bottomCta: 'Começar agora',
     ptLabel: 'Português',
     enLabel: 'English',
   },
   en: {
-    heading: 'School Uniforms',
+    kicker: 'School Uniforms',
+    headlineBold: 'Close the loop.',
+    headlineLight: 'Share uniforms.',
     description:
-      'Buy and exchange pre-owned uniforms between parents with a simple and trusted flow.',
-    initiative: 'A community-first and sustainability-oriented initiative.',
-    howItWorksTitle: 'How it works',
-    howItWorksSteps: [
-      '1. Sign in with Google and validate school access.',
-      '2. Publish a listing with compressed WebP images.',
-      '3. Contact each other directly on WhatsApp.',
-    ],
+      'A community platform to give school uniforms a second life, from family to family.',
     cta: 'Continue with Google',
-    ptLabel: 'Portuguese',
+    stepsTitle: 'Three simple steps',
+    steps: [
+      { title: 'Verify', text: 'Sign in with Google and confirm your school.' },
+      {
+        title: 'Publish',
+        text: 'Create your listing with photos of the uniform.',
+      },
+      { title: 'Connect', text: 'Contact each other directly on WhatsApp.' },
+    ],
+    bottomText: 'Circular economy starts at school.',
+    bottomCta: 'Get started',
+    ptLabel: 'Português',
     enLabel: 'English',
   },
 };

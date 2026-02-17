@@ -20,6 +20,15 @@ type ModerateListingResult =
   | { ok: true }
   | { ok: false; error: 'forbidden' | 'invalid_transition' };
 
+type DeleteListingInput = {
+  listingId: string;
+  actorId: string;
+  actorRole: ActorRole;
+  ownerId: string;
+};
+
+type DeleteListingResult = { ok: true } | { ok: false; error: 'forbidden' };
+
 const OWNER_TRANSITIONS: Record<ListingStatus, ListingStatus[]> = {
   active: ['reserved', 'sold', 'archived'],
   reserved: ['sold'],
@@ -60,8 +69,37 @@ export async function moderateListing(
   return { ok: true };
 }
 
+export type DeleteListingRepo = {
+  listImagePaths: (listingId: string) => Promise<string[]>;
+  removeStorageObjects: (paths: string[]) => Promise<void>;
+  deleteListing: (listingId: string) => Promise<void>;
+};
+
+export async function deleteListingWithAssets(
+  input: DeleteListingInput,
+  deps: { repo: DeleteListingRepo },
+): Promise<DeleteListingResult> {
+  const isOwner = input.actorId === input.ownerId;
+  const canDelete = input.actorRole === 'admin' || isOwner;
+  if (!canDelete) return { ok: false, error: 'forbidden' };
+
+  const imagePaths = await deps.repo.listImagePaths(input.listingId);
+  if (imagePaths.length > 0) {
+    await deps.repo.removeStorageObjects(imagePaths);
+  }
+
+  await deps.repo.deleteListing(input.listingId);
+  return { ok: true };
+}
+
 const noopRepo: ModerateListingRepo = {
   updateStatus: async () => undefined,
+};
+
+const noopDeleteListingRepo: DeleteListingRepo = {
+  listImagePaths: async () => [],
+  removeStorageObjects: async () => undefined,
+  deleteListing: async () => undefined,
 };
 
 function parseStatus(value: string): ListingStatus | null {
@@ -95,3 +133,17 @@ export async function moderateListingAction(formData: FormData) {
     { repo: noopRepo },
   );
 }
+
+export async function deleteListingAction(formData: FormData) {
+  await deleteListingWithAssets(
+    {
+      listingId: String(formData.get('listingId') ?? ''),
+      actorId: String(formData.get('actorId') ?? ''),
+      actorRole: String(formData.get('actorRole') ?? '') === 'admin' ? 'admin' : 'member',
+      ownerId: String(formData.get('ownerId') ?? ''),
+    },
+    { repo: noopDeleteListingRepo },
+  );
+}
+
+export type { DeleteListingResult, ListingStatus };

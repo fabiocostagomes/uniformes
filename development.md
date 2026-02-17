@@ -24,9 +24,9 @@
 
 - Branch atual: `main` (sincronizada com `origin/main`).
 - Ultimo commit: `b890f09` (`feat: add listings browse and whatsapp contact`).
-- Concluido: Tasks 0-10.
+- Concluido: Tasks 0-10.1.
 - Concluido extra: i18n day-one (`pt`/`en`) + design tokens centralizados em `app/theme.css`.
-- Proximo bloco alvo: Task 10.1.
+- Proximo bloco alvo: Task 11.
 - Nota DB: validacao atual via `test:db` (guard de migrations + RLS em SQL); quando `supabase` CLI estiver disponivel, adicionar validacao integrada local.
 - Comando de validacao rapida antes de continuar: `pnpm test:unit`.
 
@@ -43,7 +43,7 @@
 - [x] Task 8: Lista de anuncios + detalhe + contacto WhatsApp
 - [x] Task 9: Moderacao minima por admin
 - [x] Task 10: Politicas de privacidade e docs OSS
-- [ ] Task 10.1: Direitos de apagamento de dados
+- [x] Task 10.1: Direitos de apagamento de dados
 - [ ] Task 11: CI minima no GitHub
 - [ ] Task 12: Deploy + observabilidade minima
 - [ ] Task 13: Piloto controlado
@@ -72,7 +72,7 @@
 - [ ] Confirmar workspace limpo: `git status -sb`
 - [ ] Correr baseline: `pnpm test:unit`
 - [ ] Confirmar projeto Supabase alvo: `rkzvnbcbwudcskufcnci`
-- [ ] Executar em lotes: Task 10.1 (checkpoint)
+- [ ] Executar em lotes: Task 11 -> Task 12 (checkpoint)
 
 ### Template de handoff/retoma
 
@@ -606,7 +606,7 @@ Expected: PASS.
 **Step 5: Commit**
 `docs: add legal pages and open-source contribution guides`
 
-### [ ] Task 10.1: Direitos de apagamento de dados
+### [x] Task 10.1: Direitos de apagamento de dados
 
 **Files:**
 
@@ -727,7 +727,7 @@ Expected: PASS.
 1. [x] Criar repositorio GitHub publico.
 2. [x] Fechar Task 4 (com setup DB local).
 3. [ ] Validar deploy tecnico (sem abrir a pais ainda).
-4. [ ] Implementar Tasks 5-10.1.
+4. [x] Implementar Tasks 5-10.1.
 5. [ ] Fechar CI + deploy + observabilidade (Tasks 11-12).
 6. [ ] Executar piloto controlado (Task 13).
 7. [ ] Fechar runbook de fallback (Task 14).

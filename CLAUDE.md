@@ -1,8 +1,8 @@
-# CLAUDE.md - Uniformes do Colegio
+# CLAUDE.md - ReUni
 
 ## Projeto
 
-Marketplace mobile-first para troca/revenda de uniformes escolares usados entre pais, com contacto direto via WhatsApp. Foco em sustentabilidade, custo zero operacional e confianca comunitaria por escola.
+ReUni — De familia para familia. Marketplace mobile-first para troca/venda de uniformes escolares usados entre pais, com contacto direto via WhatsApp. Foco em sustentabilidade, custo zero operacional e confianca comunitaria por escola.
 
 - **Stack:** Next.js 15 (App Router) + TypeScript + Supabase (PostgreSQL + Auth + Storage) + Vitest + pnpm 10
 - **Hospedagem:** Vercel (fallback: Cloudflare Pages)

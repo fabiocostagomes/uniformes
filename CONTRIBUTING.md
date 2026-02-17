@@ -1,6 +1,6 @@
 # Contributing
 
-Obrigado por contribuir para o Uniformes do Colegio.
+Obrigado por contribuir para o ReUni.
 
 ## Fluxo recomendado
 

@@ -1,9 +1,9 @@
-# AGENTS.md - Uniformes do Colegio
+# AGENTS.md - ReUni
 
 ## Projeto
 
-- Nome: `uniformes`
-- Objetivo: marketplace mobile-first para troca/revenda de uniformes escolares entre pais.
+- Nome: `reuni`
+- Objetivo: marketplace mobile-first para troca/venda de uniformes escolares entre pais. De familia para familia.
 - Stack atual: Next.js + TypeScript + Supabase + Vitest + pnpm.
 - Planeamento fonte de verdade: `development.md`.
 

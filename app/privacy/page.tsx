@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidade | Uniformes do Colégio',
+  title: 'Política de Privacidade | ReUni',
   description: 'Como tratamos os dados pessoais na plataforma.',
 };
 

@@ -1,6 +1,6 @@
-# Uniformes do Colégio
+# ReUni
 
-Plataforma web mobile-first para pais anunciarem uniformes usados com contacto via WhatsApp, com foco em sustentabilidade, simplicidade e custo zero operacional no MVP.
+De família para família. Plataforma web mobile-first para troca e venda de uniformes escolares usados entre pais, com contacto via WhatsApp, foco em sustentabilidade e custo zero operacional.
 
 ## Stack
 

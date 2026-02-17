@@ -34,7 +34,7 @@ describe('listings mobile flow', () => {
     render(React.createElement(HomePage));
 
     expect(
-      screen.getByRole('heading', { name: /uniformes do colégio/i }),
+      screen.getByRole('heading', { name: /reuni/i }),
     ).toBeInTheDocument();
     expect(
       screen.getByText(/iniciativa comunitária e sustentável/i),

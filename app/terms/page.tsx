@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Termos de Utilização | Uniformes do Colégio',
+  title: 'Termos de Utilização | ReUni',
   description: 'Regras base para utilização responsável da plataforma.',
 };
 

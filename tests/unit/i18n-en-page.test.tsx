@@ -9,7 +9,7 @@ describe('i18n en page', () => {
     render(<EnHomePage />);
 
     expect(
-      screen.getByRole('heading', { name: /school uniforms/i }),
+      screen.getByRole('heading', { name: /reuni/i }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole('link', { name: /continue with google/i }),

@@ -13,7 +13,7 @@ type HomeMessages = {
 
 const homeMessages: Record<Locale, HomeMessages> = {
   pt: {
-    heading: 'Uniformes do Colégio',
+    heading: 'ReUni',
     description:
       'Troca e venda de uniformes usados entre pais, com foco em confiança e simplicidade.',
     initiative: 'Iniciativa comunitária e sustentável.',
@@ -28,7 +28,7 @@ const homeMessages: Record<Locale, HomeMessages> = {
     enLabel: 'English',
   },
   en: {
-    heading: 'School Uniforms',
+    heading: 'ReUni',
     description:
       'Buy and exchange pre-owned uniforms between parents with a simple and trusted flow.',
     initiative: 'A community-first and sustainability-oriented initiative.',

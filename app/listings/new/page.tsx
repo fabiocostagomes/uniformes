@@ -1,6 +1,14 @@
+import type { Metadata } from 'next';
 import React from 'react';
 
 import ListingForm from '../../../components/listing-form';
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function NewListingPage() {
   return (
@@ -13,4 +21,3 @@ export default function NewListingPage() {
     </main>
   );
 }
-

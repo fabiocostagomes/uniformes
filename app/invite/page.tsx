@@ -1,6 +1,14 @@
+import type { Metadata } from 'next';
 import React from 'react';
 
 import { redeemInviteAction } from '../actions/redeem-invite';
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function InvitePage() {
   return (
@@ -28,4 +36,3 @@ export default function InvitePage() {
     </main>
   );
 }
-

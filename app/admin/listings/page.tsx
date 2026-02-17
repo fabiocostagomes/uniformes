@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import React from 'react';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -9,6 +10,13 @@ import {
   getAllListings,
   getStatusLabel,
 } from '../../../lib/listings/mock-data';
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default async function AdminListingsPage() {
   const cookieStore = await cookies();

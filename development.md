@@ -24,9 +24,9 @@
 
 - Branch atual: `main` (sincronizada com `origin/main`).
 - Ultimo commit: `b890f09` (`feat: add listings browse and whatsapp contact`).
-- Concluido: Tasks 0-9.
+- Concluido: Tasks 0-10.
 - Concluido extra: i18n day-one (`pt`/`en`) + design tokens centralizados em `app/theme.css`.
-- Proximo bloco alvo: Task 10.
+- Proximo bloco alvo: Task 10.1.
 - Nota DB: validacao atual via `test:db` (guard de migrations + RLS em SQL); quando `supabase` CLI estiver disponivel, adicionar validacao integrada local.
 - Comando de validacao rapida antes de continuar: `pnpm test:unit`.
 
@@ -42,7 +42,7 @@
 - [x] Task 7: Upload de imagens (max 3, WebP comprimido)
 - [x] Task 8: Lista de anuncios + detalhe + contacto WhatsApp
 - [x] Task 9: Moderacao minima por admin
-- [ ] Task 10: Politicas de privacidade e docs OSS
+- [x] Task 10: Politicas de privacidade e docs OSS
 - [ ] Task 10.1: Direitos de apagamento de dados
 - [ ] Task 11: CI minima no GitHub
 - [ ] Task 12: Deploy + observabilidade minima
@@ -72,7 +72,7 @@
 - [ ] Confirmar workspace limpo: `git status -sb`
 - [ ] Correr baseline: `pnpm test:unit`
 - [ ] Confirmar projeto Supabase alvo: `rkzvnbcbwudcskufcnci`
-- [ ] Executar em lotes: Task 10 -> Task 10.1 (checkpoint)
+- [ ] Executar em lotes: Task 10.1 (checkpoint)
 
 ### Template de handoff/retoma
 
@@ -579,7 +579,7 @@ Expected: PASS.
 **Step 5: Commit**
 `feat: add admin moderation for listings`
 
-### [ ] Task 10: Politicas de privacidade e docs OSS
+### [x] Task 10: Politicas de privacidade e docs OSS
 
 **Files:**
 

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import React from 'react';
 import { cookies } from 'next/headers';
 import { notFound, redirect } from 'next/navigation';
@@ -12,6 +13,13 @@ import {
 
 type ListingDetailPageProps = {
   params: Promise<{ id: string }>;
+};
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default async function ListingDetailPage({ params }: ListingDetailPageProps) {

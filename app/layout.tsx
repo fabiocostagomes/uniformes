@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
+import SiteFooter from '../components/site-footer';
+
 import './theme.css';
 import './globals.css';
 
@@ -16,7 +18,12 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-PT">
-      <body>{children}</body>
+      <body>
+        <div className="app-shell">
+          <div className="app-main">{children}</div>
+          <SiteFooter />
+        </div>
+      </body>
     </html>
   );
 }

@@ -24,9 +24,9 @@
 
 - Branch atual: `main` (sincronizada com `origin/main`).
 - Ultimo commit: `b890f09` (`feat: add listings browse and whatsapp contact`).
-- Concluido: Tasks 0-10.1.
+- Concluido: Tasks 0-11.
 - Concluido extra: i18n day-one (`pt`/`en`) + design tokens centralizados em `app/theme.css`.
-- Proximo bloco alvo: Task 11.
+- Proximo bloco alvo: Task 12.
 - Nota DB: validacao atual via `test:db` (guard de migrations + RLS em SQL); quando `supabase` CLI estiver disponivel, adicionar validacao integrada local.
 - Comando de validacao rapida antes de continuar: `pnpm test:unit`.
 
@@ -44,7 +44,7 @@
 - [x] Task 9: Moderacao minima por admin
 - [x] Task 10: Politicas de privacidade e docs OSS
 - [x] Task 10.1: Direitos de apagamento de dados
-- [ ] Task 11: CI minima no GitHub
+- [x] Task 11: CI minima no GitHub
 - [ ] Task 12: Deploy + observabilidade minima
 - [ ] Task 13: Piloto controlado
 - [ ] Task 14: Runbook de fallback para Cloudflare Pages
@@ -72,7 +72,7 @@
 - [ ] Confirmar workspace limpo: `git status -sb`
 - [ ] Correr baseline: `pnpm test:unit`
 - [ ] Confirmar projeto Supabase alvo: `rkzvnbcbwudcskufcnci`
-- [ ] Executar em lotes: Task 11 -> Task 12 (checkpoint)
+- [ ] Executar em lotes: Task 12 (checkpoint)
 
 ### Template de handoff/retoma
 
@@ -636,7 +636,7 @@ Expected: PASS.
 **Step 5: Commit**
 `feat: add privacy deletion flows for account and listings`
 
-### [ ] Task 11: CI minima no GitHub
+### [x] Task 11: CI minima no GitHub
 
 **Files:**
 

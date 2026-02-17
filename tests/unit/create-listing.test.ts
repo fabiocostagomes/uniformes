@@ -35,6 +35,7 @@ describe('create listing', () => {
     );
 
     expect(result.ok).toBe(false);
+    if (result.ok) throw new Error('expected validation error');
     expect(result.error).toBe('validation_error');
   });
 
@@ -53,6 +54,7 @@ describe('create listing', () => {
     );
 
     expect(result.ok).toBe(false);
+    if (result.ok) throw new Error('expected validation error');
     expect(result.error).toBe('validation_error');
   });
 
@@ -72,6 +74,7 @@ describe('create listing', () => {
     );
 
     expect(result.ok).toBe(false);
+    if (result.ok) throw new Error('expected validation error');
     expect(result.error).toBe('validation_error');
   });
 
@@ -110,6 +113,7 @@ describe('create listing', () => {
     );
 
     expect(result.ok).toBe(false);
+    if (result.ok) throw new Error('expected rate limited error');
     expect(result.error).toBe('rate_limited');
     expect(repo.createListing).not.toHaveBeenCalled();
   });

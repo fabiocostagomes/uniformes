@@ -33,6 +33,7 @@ describe('invite flow', () => {
     );
 
     expect(result.ok).toBe(false);
+    if (result.ok) throw new Error('expected invalid code');
     expect(result.error).toBe('invalid_code');
   });
 
@@ -76,6 +77,7 @@ describe('invite flow', () => {
     );
 
     expect(result.ok).toBe(false);
+    if (result.ok) throw new Error('expected rate limited error');
     expect(result.error).toBe('rate_limited');
     expect(repo.findInviteByCode).not.toHaveBeenCalled();
   });

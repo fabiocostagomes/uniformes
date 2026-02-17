@@ -81,6 +81,7 @@ Preencher quando a sessao parar:
 ## Decisoes Fechadas
 
 - Tipo: website mobile-first desde o MVP (otimizado para smartphone)
+- i18n desde o inicio: `pt` (default) e `en` sem dependencias externas
 - Login: Google OAuth
 - Contato: WhatsApp (fora da plataforma)
 - Visibilidade do contacto: apenas utilizadores autenticados
@@ -266,6 +267,10 @@ Expected: FAIL (pagina ainda nao implementada).
 **Step 3: Implementar homepage minima**
 
 Criar layout e pagina inicial com CTA para login e estilos mobile-first.
+
+**Step 3.1: i18n baseline**
+
+Adicionar paginas base `app/pt/page.tsx` e `app/en/page.tsx` com conteudo traduzido e comutador de idioma.
 
 **Step 4: Validar sucesso**
 

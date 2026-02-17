@@ -24,9 +24,9 @@
 
 - Branch atual: `main` (sincronizada com `origin/main`).
 - Ultimo commit: `b890f09` (`feat: add listings browse and whatsapp contact`).
-- Concluido: Tasks 0-12.
+- Concluido: Tasks 0-13.
 - Concluido extra: i18n day-one (`pt`/`en`) + design tokens centralizados em `app/theme.css`.
-- Proximo bloco alvo: Task 13.
+- Proximo bloco alvo: Task 14.
 - Nota DB: validacao atual via `test:db` (guard de migrations + RLS em SQL); quando `supabase` CLI estiver disponivel, adicionar validacao integrada local.
 - Comando de validacao rapida antes de continuar: `pnpm test:unit`.
 
@@ -46,7 +46,7 @@
 - [x] Task 10.1: Direitos de apagamento de dados
 - [x] Task 11: CI minima no GitHub
 - [x] Task 12: Deploy + observabilidade minima
-- [ ] Task 13: Piloto controlado
+- [x] Task 13: Piloto controlado
 - [ ] Task 14: Runbook de fallback para Cloudflare Pages
 
 ## Protocolo de sessao longa (agent-ready)
@@ -72,7 +72,7 @@
 - [ ] Confirmar workspace limpo: `git status -sb`
 - [ ] Correr baseline: `pnpm test:unit`
 - [ ] Confirmar projeto Supabase alvo: `rkzvnbcbwudcskufcnci`
-- [ ] Executar em lotes: Task 13 (checkpoint)
+- [ ] Executar em lotes: Task 14 (checkpoint)
 
 ### Template de handoff/retoma
 
@@ -672,7 +672,7 @@ Expected: PASS.
 **Step 3: Commit**
 `docs: add deployment runbook and production smoke checklist`
 
-### [ ] Task 13: Piloto controlado
+### [x] Task 13: Piloto controlado
 
 **Files:**
 
@@ -729,5 +729,5 @@ Expected: PASS.
 3. [ ] Validar deploy tecnico (sem abrir a pais ainda).
 4. [x] Implementar Tasks 5-10.1.
 5. [x] Fechar CI + deploy + observabilidade (Tasks 11-12).
-6. [ ] Executar piloto controlado (Task 13).
+6. [x] Executar piloto controlado (Task 13).
 7. [ ] Fechar runbook de fallback (Task 14).

@@ -47,3 +47,4 @@ Consulta:
 
 - Runbook de deploy: `docs/deploy.md`
 - Provisionamento inicial: `docs/setup/initial-provisioning.md`
+- Plano de piloto: `docs/pilot-plan.md`

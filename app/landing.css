@@ -383,6 +383,7 @@
   .v2-circle-2,
   .v2-circle-3 {
     animation: none;
+    transform: translate(-50%, -50%);
   }
 
   .v2-hero-content,

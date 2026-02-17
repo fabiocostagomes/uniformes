@@ -24,9 +24,9 @@
 
 - Branch atual: `main` (sincronizada com `origin/main`).
 - Ultimo commit: `b890f09` (`feat: add listings browse and whatsapp contact`).
-- Concluido: Tasks 0-11.
+- Concluido: Tasks 0-12.
 - Concluido extra: i18n day-one (`pt`/`en`) + design tokens centralizados em `app/theme.css`.
-- Proximo bloco alvo: Task 12.
+- Proximo bloco alvo: Task 13.
 - Nota DB: validacao atual via `test:db` (guard de migrations + RLS em SQL); quando `supabase` CLI estiver disponivel, adicionar validacao integrada local.
 - Comando de validacao rapida antes de continuar: `pnpm test:unit`.
 
@@ -45,7 +45,7 @@
 - [x] Task 10: Politicas de privacidade e docs OSS
 - [x] Task 10.1: Direitos de apagamento de dados
 - [x] Task 11: CI minima no GitHub
-- [ ] Task 12: Deploy + observabilidade minima
+- [x] Task 12: Deploy + observabilidade minima
 - [ ] Task 13: Piloto controlado
 - [ ] Task 14: Runbook de fallback para Cloudflare Pages
 
@@ -72,7 +72,7 @@
 - [ ] Confirmar workspace limpo: `git status -sb`
 - [ ] Correr baseline: `pnpm test:unit`
 - [ ] Confirmar projeto Supabase alvo: `rkzvnbcbwudcskufcnci`
-- [ ] Executar em lotes: Task 12 (checkpoint)
+- [ ] Executar em lotes: Task 13 (checkpoint)
 
 ### Template de handoff/retoma
 
@@ -92,7 +92,7 @@ Preencher quando a sessao parar:
 - [x] Gate A: auth funcional + schema aplicado + RLS validado
 - [x] Lote B (core produto): Tasks 5-9
 - [x] Gate B: criar anuncio + upload + listagem + moderacao a funcionar
-- [ ] Lote C (operacao): Tasks 10-12
+- [x] Lote C (operacao): Tasks 10-12
 - [ ] Gate C: docs legais + CI verde + deploy smoke concluido
 - [ ] Lote D (rollout e resiliencia): Tasks 13-14
 - [ ] Gate D: piloto preparado + fallback documentado/testado
@@ -653,7 +653,7 @@ Expected: PASS.
 **Step 3: Commit**
 `ci: add github actions pipeline`
 
-### [ ] Task 12: Deploy + observabilidade minima
+### [x] Task 12: Deploy + observabilidade minima
 
 **Files:**
 
@@ -728,6 +728,6 @@ Expected: PASS.
 2. [x] Fechar Task 4 (com setup DB local).
 3. [ ] Validar deploy tecnico (sem abrir a pais ainda).
 4. [x] Implementar Tasks 5-10.1.
-5. [ ] Fechar CI + deploy + observabilidade (Tasks 11-12).
+5. [x] Fechar CI + deploy + observabilidade (Tasks 11-12).
 6. [ ] Executar piloto controlado (Task 13).
 7. [ ] Fechar runbook de fallback (Task 14).

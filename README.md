@@ -42,3 +42,8 @@ Consulta:
 
 - `CONTRIBUTING.md`
 - `CODE_OF_CONDUCT.md`
+
+## Deploy e operacao
+
+- Runbook de deploy: `docs/deploy.md`
+- Provisionamento inicial: `docs/setup/initial-provisioning.md`

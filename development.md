@@ -24,9 +24,9 @@
 
 - Branch atual: `main` (sincronizada com `origin/main`).
 - Ultimo commit: `b890f09` (`feat: add listings browse and whatsapp contact`).
-- Concluido: Tasks 0-13.
+- Concluido: Tasks 0-14.
 - Concluido extra: i18n day-one (`pt`/`en`) + design tokens centralizados em `app/theme.css`.
-- Proximo bloco alvo: Task 14.
+- Proximo bloco alvo: Backlog pos-MVP.
 - Nota DB: validacao atual via `test:db` (guard de migrations + RLS em SQL); quando `supabase` CLI estiver disponivel, adicionar validacao integrada local.
 - Comando de validacao rapida antes de continuar: `pnpm test:unit`.
 
@@ -47,7 +47,7 @@
 - [x] Task 11: CI minima no GitHub
 - [x] Task 12: Deploy + observabilidade minima
 - [x] Task 13: Piloto controlado
-- [ ] Task 14: Runbook de fallback para Cloudflare Pages
+- [x] Task 14: Runbook de fallback para Cloudflare Pages
 
 ## Protocolo de sessao longa (agent-ready)
 
@@ -72,7 +72,7 @@
 - [ ] Confirmar workspace limpo: `git status -sb`
 - [ ] Correr baseline: `pnpm test:unit`
 - [ ] Confirmar projeto Supabase alvo: `rkzvnbcbwudcskufcnci`
-- [ ] Executar em lotes: Task 14 (checkpoint)
+- [x] Executar em lotes: Task 14 (checkpoint)
 
 ### Template de handoff/retoma
 
@@ -94,8 +94,8 @@ Preencher quando a sessao parar:
 - [x] Gate B: criar anuncio + upload + listagem + moderacao a funcionar
 - [x] Lote C (operacao): Tasks 10-12
 - [ ] Gate C: docs legais + CI verde + deploy smoke concluido
-- [ ] Lote D (rollout e resiliencia): Tasks 13-14
-- [ ] Gate D: piloto preparado + fallback documentado/testado
+- [x] Lote D (rollout e resiliencia): Tasks 13-14
+- [x] Gate D: piloto preparado + fallback documentado/testado
 
 ## Decisoes Fechadas
 
@@ -690,7 +690,7 @@ Expected: PASS.
 **Step 3: Commit**
 `docs: add controlled pilot rollout plan`
 
-### [ ] Task 14: Runbook de fallback para Cloudflare Pages
+### [x] Task 14: Runbook de fallback para Cloudflare Pages
 
 **Files:**
 
@@ -730,4 +730,4 @@ Expected: PASS.
 4. [x] Implementar Tasks 5-10.1.
 5. [x] Fechar CI + deploy + observabilidade (Tasks 11-12).
 6. [x] Executar piloto controlado (Task 13).
-7. [ ] Fechar runbook de fallback (Task 14).
+7. [x] Fechar runbook de fallback (Task 14).

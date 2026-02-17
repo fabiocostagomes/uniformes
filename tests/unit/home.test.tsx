@@ -9,7 +9,7 @@ describe('home page', () => {
     render(<HomePage />);
 
     expect(
-      screen.getByRole('heading', { name: /reuni/i }),
+      screen.getByRole('heading', { name: /uniformes do colégio/i }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole('link', { name: /entrar com google/i }),

@@ -9,7 +9,7 @@ describe('i18n pt page', () => {
     render(<PtHomePage />);
 
     expect(
-      screen.getByRole('heading', { name: /reuni/i }),
+      screen.getByRole('heading', { name: /uniformes do colégio/i }),
     ).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /português/i })).toHaveAttribute(
       'href',

@@ -5,8 +5,8 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="site-footer-inner">
         <p className="muted">
-          ReUni — De família para família. Reutilizar uniformes é uma prática
-          comunitária e sustentável.
+          Uniformes do Colégio. Reutilizar uniformes é uma prática comunitária e
+          sustentável.
         </p>
         <nav aria-label="Links legais" className="footer-links">
           <a href="/privacy">Política de Privacidade</a>

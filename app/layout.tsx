@@ -7,8 +7,8 @@ import './theme.css';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'ReUni',
-  description: 'De família para família. Troca e venda de uniformes escolares.',
+  title: 'Uniformes do Colégio',
+  description: 'Marketplace de uniformes usados entre pais.',
 };
 
 type RootLayoutProps = {

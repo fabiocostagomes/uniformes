@@ -6,17 +6,29 @@
 
 **Architecture:** Aplicacao Next.js (App Router) mobile-first no frontend/backend leve, hospedada na Vercel (Hobby), com Supabase para autenticacao Google OAuth, Postgres e Storage de imagens. O MVP comeca com 1 colegio e estrutura multi-escola (`school_id`) para crescimento futuro.
 
-**Tech Stack:** Next.js + TypeScript, Supabase (Auth/DB/Storage), Tailwind CSS, Zod, Vitest, Playwright, pnpm, GitHub Actions.
+**Tech Stack:** Next.js + TypeScript, Supabase (Auth/DB/Storage), CSS tokens centralizados (`app/theme.css`), Zod, Vitest, Playwright, pnpm, GitHub Actions.
 
 ## Painel de execucao (checklist mestre)
 
 ### Preflight do projeto
 
-- [ ] Confirmar nome final do repositorio no GitHub.
-- [ ] Criar repositorio publico com branch principal protegida.
-- [ ] Confirmar acesso a Vercel e Supabase.
+- [x] Confirmar nome final do repositorio no GitHub (`uniformes`).
+- [x] Criar repositorio publico.
+- [ ] Ativar branch protection em `main` (required checks + no force push).
+- [x] Confirmar acesso a Supabase.
+- [ ] Confirmar acesso a Vercel.
 - [ ] Confirmar conta Google OAuth para ambiente dev/preview/prod.
 - [ ] Definir responsavel por revisao legal (privacy/terms).
+
+## Estado Atual (2026-02-17)
+
+- Branch atual: `main` (sincronizada com `origin/main`).
+- Ultimo commit: `cf2035c` (`feat: centralize color and typography tokens in theme file`).
+- Concluido: Tasks 0-3.
+- Concluido extra: i18n day-one (`pt`/`en`) + design tokens centralizados em `app/theme.css`.
+- Proximo bloco alvo: Task 4 (schema + RLS) e depois Tasks 5-6.
+- Bloqueio conhecido para Task 4: `supabase` CLI nao instalado localmente.
+- Comando de validacao rapida antes de continuar: `pnpm test:unit`.
 
 ### Checklist mestre por task
 
@@ -54,6 +66,14 @@
 - [ ] Registar ultimo commit e proxima task.
 - [ ] Registar bloqueios tecnicos e decisoes tomadas.
 - [ ] Confirmar se ha mudancas de escopo antes de continuar.
+
+### Arranque rapido da sessao longa
+
+- [ ] Confirmar workspace limpo: `git status -sb`
+- [ ] Correr baseline: `pnpm test:unit`
+- [ ] Confirmar projeto Supabase alvo: `rkzvnbcbwudcskufcnci`
+- [ ] Se Task 4 for iniciada: instalar Supabase CLI e validar login/link do projeto
+- [ ] Executar em lotes: Task 4 -> Task 5 -> Task 6 (checkpoint) -> Task 7 -> Task 8 (checkpoint)
 
 ### Template de handoff/retoma
 
@@ -376,10 +396,17 @@ Expected: PASS.
 
 **Files:**
 
+- Modify: `package.json`
 - Create: `supabase/migrations/0001_initial_schema.sql`
 - Create: `supabase/migrations/0002_rls_policies.sql`
 - Create: `supabase/seed.sql`
 - Create: `docs/db-schema.md`
+
+**Step 0: Preparar ferramenta de DB local**
+
+- Instalar Supabase CLI no ambiente local.
+- Adicionar script `test:db` no `package.json`.
+- Definir estrategia de execucao (recomendada): stack local Supabase + migracoes + verificacao de RLS.
 
 **Step 1: Teste SQL falho**
 
@@ -691,15 +718,15 @@ Expected: PASS.
 
 ## Perguntas em aberto antes do primeiro commit de codigo
 
-1. Nome final do projeto/repositorio no GitHub.
-2. Texto legal (privacy/terms) com revisao juridica local.
-3. Politica para fotos com rostos de criancas (bloquear automaticamente ou regra manual).
-4. Formato do numero de WhatsApp (E.164) e mensagem pre-preenchida padrao.
+1. Texto legal (privacy/terms) com revisao juridica local.
+2. Politica para fotos com rostos de criancas (bloquear automaticamente ou regra manual).
+3. Formato do numero de WhatsApp (E.164) e mensagem pre-preenchida padrao.
+4. Configuracao final de branch protection para `main`.
 
 ## Ordem recomendada de arranque
 
-1. [ ] Criar repositorio GitHub publico.
-2. [ ] Implementar Tasks 0-4.
+1. [x] Criar repositorio GitHub publico.
+2. [ ] Fechar Task 4 (com setup DB local).
 3. [ ] Validar deploy tecnico (sem abrir a pais ainda).
 4. [ ] Implementar Tasks 5-10.1.
 5. [ ] Fechar CI + deploy + observabilidade (Tasks 11-12).

@@ -1,0 +1,434 @@
+/* ==========================================================================
+   V2 — "Ciclo Verde" homepage variant
+   Geometric / circular-economy motif · Muji-meets-sustainability aesthetic
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+/* ---------- Design tokens ---------- */
+:root {
+  --v2-green-dark: #1a3a2a;
+  --v2-green: #2f6f4e;
+  --v2-green-light: #a8d5ba;
+  --v2-green-pale: #edf5ef;
+  --v2-white: #ffffff;
+  --v2-font: 'Outfit', var(--font-family-base, system-ui, sans-serif);
+  --v2-radius-pill: 999px;
+  --v2-radius-card: 1.5rem;
+  --v2-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes v2-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes v2-spin-reverse {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to   { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes v2-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes v2-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Page root ---------- */
+.v2 {
+  font-family: var(--v2-font);
+  color: var(--v2-green-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Version nav — fixed top-right pill with glassmorphism
+   ========================================================================== */
+.v2-version-nav {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 100;
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border-radius: var(--v2-radius-pill);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(47, 111, 78, 0.12);
+  box-shadow: 0 2px 12px rgba(26, 58, 42, 0.06);
+}
+
+.v2-version-nav a {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  font-family: var(--v2-font);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--v2-green);
+  transition: background var(--v2-transition), color var(--v2-transition);
+}
+
+.v2-version-nav a:hover {
+  background: rgba(47, 111, 78, 0.08);
+}
+
+.v2-version-nav a[aria-current='page'] {
+  background: var(--v2-green);
+  color: var(--v2-white);
+}
+
+/* ==========================================================================
+   Hero section — full viewport, gradient, concentric circles
+   ========================================================================== */
+.v2-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 6rem 1.5rem 4rem;
+  background: linear-gradient(135deg, #e8f4ec 0%, #d4ebdd 50%, #edf5ef 100%);
+  overflow: hidden;
+}
+
+/* ---------- Locale nav ---------- */
+.v2-locale {
+  position: absolute;
+  top: 1.35rem;
+  left: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.v2-locale a {
+  font-family: var(--v2-font);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--v2-green);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity var(--v2-transition);
+}
+
+.v2-locale a:hover {
+  opacity: 1;
+}
+
+/* ---------- Concentric circles container ---------- */
+.v2-circles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.v2-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border-style: dashed;
+  border-color: rgba(47, 111, 78, 0.12);
+}
+
+.v2-circle-1 {
+  width: min(80vw, 500px);
+  height: min(80vw, 500px);
+  border-width: 2px;
+  border-color: rgba(47, 111, 78, 0.12);
+  animation: v2-spin 30s linear infinite;
+}
+
+.v2-circle-2 {
+  width: min(60vw, 380px);
+  height: min(60vw, 380px);
+  border-width: 2px;
+  border-color: rgba(47, 111, 78, 0.18);
+  animation: v2-spin-reverse 20s linear infinite;
+}
+
+.v2-circle-3 {
+  width: min(40vw, 260px);
+  height: min(40vw, 260px);
+  border-width: 2px;
+  border-color: rgba(47, 111, 78, 0.25);
+  animation: v2-spin 15s linear infinite;
+}
+
+/* ---------- Hero content ---------- */
+.v2-hero-content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 640px;
+  animation: v2-fadeIn 0.9s ease-out both;
+}
+
+/* Kicker */
+.v2-kicker {
+  font-family: var(--v2-font);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--v2-green);
+  margin: 0 0 1.25rem;
+  opacity: 0.85;
+}
+
+/* Headline */
+.v2-headline {
+  font-family: var(--v2-font);
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--v2-green-dark);
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.v2-light {
+  font-weight: 300;
+  color: var(--v2-green);
+}
+
+/* Sub-headline */
+.v2-sub {
+  font-family: var(--v2-font);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--v2-green-dark);
+  opacity: 0.75;
+  margin: 0 0 2.25rem;
+  max-width: 480px;
+}
+
+/* ==========================================================================
+   CTA button — shared across sections
+   ========================================================================== */
+.v2-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.4rem;
+  border-radius: var(--v2-radius-pill);
+  background: var(--v2-green);
+  color: var(--v2-white);
+  font-family: var(--v2-font);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform var(--v2-transition),
+    box-shadow var(--v2-transition),
+    background var(--v2-transition);
+}
+
+.v2-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(47, 111, 78, 0.28);
+  background: #276644;
+}
+
+.v2-cta:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(47, 111, 78, 0.2);
+}
+
+/* ==========================================================================
+   Steps section
+   ========================================================================== */
+.v2-steps {
+  background: var(--v2-white);
+  padding: 5rem 1.5rem;
+}
+
+.v2-section-title {
+  font-family: var(--v2-font);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  text-align: center;
+  color: var(--v2-green-dark);
+  margin: 0 0 3rem;
+  letter-spacing: -0.01em;
+}
+
+/* Steps row — vertical by default, horizontal on desktop */
+.v2-steps-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Individual step card */
+.v2-step {
+  background: var(--v2-green-pale);
+  border-radius: var(--v2-radius-card);
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  animation: v2-fadeInUp 0.7s ease-out both;
+}
+
+.v2-step:nth-child(1) { animation-delay: 0.1s; }
+.v2-step:nth-child(3) { animation-delay: 0.2s; }
+.v2-step:nth-child(5) { animation-delay: 0.3s; }
+
+.v2-step-icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid var(--v2-green);
+  margin: 0 auto 1.25rem;
+  font-family: var(--v2-font);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--v2-green);
+}
+
+.v2-step h3 {
+  font-family: var(--v2-font);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--v2-green-dark);
+  margin: 0 0 0.6rem;
+}
+
+.v2-step p {
+  font-family: var(--v2-font);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--v2-green-dark);
+  opacity: 0.72;
+  margin: 0;
+}
+
+/* Step connector — vertical on mobile */
+.v2-step-connector {
+  width: 2px;
+  height: 2rem;
+  background: var(--v2-green-light);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Bottom CTA section
+   ========================================================================== */
+.v2-bottom {
+  background: var(--v2-green-pale);
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+}
+
+.v2-bottom-text {
+  font-family: var(--v2-font);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  color: var(--v2-green-dark);
+  margin: 0 0 2rem;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   Responsive — desktop (>= 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
+  /* Steps become horizontal row */
+  .v2-steps-row {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+
+  .v2-step {
+    flex: 1;
+    max-width: 280px;
+  }
+
+  /* Connector becomes horizontal */
+  .v2-step-connector {
+    width: 3rem;
+    height: 2px;
+    background: var(--v2-green-light);
+  }
+
+  /* More generous section padding */
+  .v2-steps {
+    padding: 6rem 2rem;
+  }
+
+  .v2-bottom {
+    padding: 5.5rem 2rem;
+  }
+}
+
+/* Larger desktop refinements */
+@media (min-width: 1024px) {
+  .v2-step {
+    max-width: 300px;
+    padding: 2.75rem 2.25rem 2.25rem;
+  }
+
+  .v2-step-connector {
+    width: 4rem;
+  }
+}
+
+/* ==========================================================================
+   Reduced motion — respect user preference
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .v2-circle-1,
+  .v2-circle-2,
+  .v2-circle-3 {
+    animation: none;
+  }
+
+  .v2-hero-content,
+  .v2-step {
+    animation: none;
+  }
+}

@@ -1,0 +1,447 @@
+/* ==========================================================================
+   V1 — "Manifesto Bold"
+   Editorial magazine meets activist poster.
+   Massive serif typography, left-aligned hero, staggered fade-ups.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap');
+
+/* --------------------------------------------------------------------------
+   Tokens
+   -------------------------------------------------------------------------- */
+.v1 {
+  --v1-bg: #faf8f3;
+  --v1-dark: #1a3a2a;
+  --v1-green: #2f6f4e;
+  --v1-green-light: #3d8c64;
+  --v1-gold: #c4a35a;
+  --v1-cream: #faf8f3;
+  --v1-muted: #5e7a6a;
+
+  --v1-font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --v1-font-body: var(--font-family-base);
+
+  --v1-page-px: 1.5rem;
+  --v1-section-py: 5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+.v1 {
+  font-family: var(--v1-font-body);
+  color: var(--v1-dark);
+  background: var(--v1-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   Fade-up animation
+   -------------------------------------------------------------------------- */
+@keyframes v1-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Version nav — fixed top-right, glassmorphism pills
+   -------------------------------------------------------------------------- */
+.v1-version-nav {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 100;
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.v1-version-nav a {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  font-family: var(--v1-font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--v1-dark);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.v1-version-nav a:hover {
+  background: rgba(47, 111, 78, 0.1);
+}
+
+.v1-version-nav a[aria-current='page'] {
+  background: var(--v1-green);
+  color: var(--v1-cream);
+}
+
+/* --------------------------------------------------------------------------
+   Locale nav — top-left, small uppercase links
+   -------------------------------------------------------------------------- */
+.v1-locale {
+  position: absolute;
+  top: 1.5rem;
+  left: var(--v1-page-px);
+  display: flex;
+  gap: 1rem;
+}
+
+.v1-locale a {
+  font-family: var(--v1-font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--v1-green);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.v1-locale a:hover {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+.v1-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100dvh;
+  padding: 6rem var(--v1-page-px) 4rem;
+  background: var(--v1-bg);
+  overflow: hidden;
+}
+
+/* Left accent line */
+.v1-hero-content {
+  position: relative;
+  padding-left: 2rem;
+  max-width: 52rem;
+}
+
+.v1-hero-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--v1-green);
+  border-radius: 2px;
+}
+
+/* Kicker */
+.v1-kicker {
+  margin: 0 0 1.25rem;
+  font-family: var(--v1-font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--v1-green);
+
+  animation: v1-fadeUp 0.8s ease both;
+  animation-delay: 0.1s;
+}
+
+/* Headline */
+.v1-headline {
+  margin: 0 0 1.5rem;
+  font-family: var(--v1-font-serif);
+  font-weight: 900;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--v1-dark);
+
+  animation: v1-fadeUp 0.8s ease both;
+  animation-delay: 0.25s;
+}
+
+.v1-headline em {
+  font-style: italic;
+  color: var(--v1-green-light);
+}
+
+/* Sub */
+.v1-sub {
+  margin: 0 0 2.25rem;
+  max-width: 32rem;
+  font-family: var(--v1-font-body);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--v1-muted);
+
+  animation: v1-fadeUp 0.8s ease both;
+  animation-delay: 0.4s;
+}
+
+/* CTA button */
+.v1-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2.25rem;
+  font-family: var(--v1-font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: var(--v1-cream);
+  background: var(--v1-dark);
+  border-radius: 999px;
+  box-shadow: 0 4px 18px rgba(26, 58, 42, 0.18);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+  animation: v1-fadeUp 0.8s ease both;
+  animation-delay: 0.55s;
+}
+
+.v1-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(26, 58, 42, 0.24);
+  background: var(--v1-green);
+}
+
+.v1-cta:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(26, 58, 42, 0.15);
+}
+
+/* Decorative accent circle */
+.v1-hero-accent {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(47, 111, 78, 0.06) 0%,
+    rgba(47, 111, 78, 0) 70%
+  );
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Impact section — dark green background
+   -------------------------------------------------------------------------- */
+.v1-impact {
+  padding: var(--v1-section-py) var(--v1-page-px);
+  background: var(--v1-dark);
+  color: var(--v1-cream);
+}
+
+.v1-section-title {
+  margin: 0 0 3rem;
+  font-family: var(--v1-font-serif);
+  font-weight: 900;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.v1-impact .v1-section-title {
+  color: var(--v1-cream);
+}
+
+.v1-impact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.v1-impact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(250, 248, 243, 0.12);
+}
+
+.v1-impact-number {
+  font-family: var(--v1-font-serif);
+  font-weight: 900;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1;
+  color: var(--v1-gold);
+}
+
+.v1-impact-label {
+  font-family: var(--v1-font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(250, 248, 243, 0.75);
+  max-width: 24rem;
+}
+
+/* --------------------------------------------------------------------------
+   How section — cream background, numbered steps
+   -------------------------------------------------------------------------- */
+.v1-how {
+  padding: var(--v1-section-py) var(--v1-page-px);
+  background: var(--v1-bg);
+}
+
+.v1-how .v1-section-title {
+  color: var(--v1-dark);
+}
+
+.v1-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.v1-steps li {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(26, 58, 42, 0.1);
+}
+
+.v1-steps li:first-child {
+  border-top: 1px solid rgba(26, 58, 42, 0.1);
+}
+
+.v1-step-num {
+  flex-shrink: 0;
+  font-family: var(--v1-font-serif);
+  font-weight: 900;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1;
+  color: var(--v1-gold);
+  min-width: 2.5rem;
+}
+
+.v1-step-text {
+  font-family: var(--v1-font-body);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--v1-dark);
+  max-width: 36rem;
+}
+
+/* --------------------------------------------------------------------------
+   Final CTA section
+   -------------------------------------------------------------------------- */
+.v1-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--v1-section-py) var(--v1-page-px);
+  background: var(--v1-bg);
+}
+
+.v1-final-headline {
+  margin: 0 0 2rem;
+  font-family: var(--v1-font-serif);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--v1-dark);
+}
+
+.v1-final .v1-cta {
+  animation: none;
+}
+
+/* --------------------------------------------------------------------------
+   Desktop — wider padding, 3-column impact grid
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .v1 {
+    --v1-page-px: 4rem;
+  }
+
+  .v1-hero-accent {
+    width: 320px;
+    height: 320px;
+    bottom: -60px;
+    right: -60px;
+  }
+
+  .v1-impact-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .v1-locale {
+    left: var(--v1-page-px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .v1 {
+    --v1-page-px: 6rem;
+  }
+
+  .v1-hero-content {
+    padding-left: 2.5rem;
+  }
+
+  .v1-hero-accent {
+    width: 400px;
+    height: 400px;
+    bottom: -80px;
+    right: -40px;
+    background: radial-gradient(
+      circle,
+      rgba(47, 111, 78, 0.05) 0%,
+      rgba(47, 111, 78, 0) 65%
+    );
+  }
+
+  .v1-impact-card {
+    padding: 2.5rem 0;
+  }
+
+  .v1-steps li {
+    gap: 2.5rem;
+    padding: 2.5rem 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion — disable animations
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .v1-kicker,
+  .v1-headline,
+  .v1-sub,
+  .v1-cta {
+    animation: none;
+  }
+}

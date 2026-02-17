@@ -1,0 +1,501 @@
+/* ==========================================================================
+   V3 — "Números que Importam"
+   Data-driven design where large monospace numbers create emotional
+   credibility. Bloomberg/FT data-viz meets sustainability.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap');
+
+/* --------------------------------------------------------------------------
+   Tokens
+   -------------------------------------------------------------------------- */
+.v3 {
+  --v3-white: #ffffff;
+  --v3-dark: #1a3a2a;
+  --v3-green: #2f6f4e;
+  --v3-green-hover: #245a3e;
+  --v3-pale: #edf5ef;
+  --v3-muted: #5b6875;
+
+  --v3-font-mono: 'IBM Plex Mono', 'SF Mono', 'Fira Code', monospace;
+  --v3-font-body: 'DM Sans', var(--font-family-base);
+
+  --v3-page-px: 1.5rem;
+  --v3-section-py: 5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+.v3 {
+  font-family: var(--v3-font-body);
+  color: var(--v3-dark);
+  background: var(--v3-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   Fade-up animation
+   -------------------------------------------------------------------------- */
+@keyframes v3-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Version nav — fixed top-right, glassmorphism pills
+   -------------------------------------------------------------------------- */
+.v3-version-nav {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 100;
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.v3-version-nav a {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  font-family: var(--v3-font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--v3-dark);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.v3-version-nav a:hover {
+  background: rgba(47, 111, 78, 0.1);
+}
+
+.v3-version-nav a[aria-current='page'] {
+  background: var(--v3-green);
+  color: var(--v3-white);
+}
+
+/* --------------------------------------------------------------------------
+   Locale nav — top-left of hero, small uppercase green links
+   -------------------------------------------------------------------------- */
+.v3-locale {
+  position: absolute;
+  top: 1.5rem;
+  left: var(--v3-page-px);
+  display: flex;
+  gap: 1rem;
+}
+
+.v3-locale a {
+  font-family: var(--v3-font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--v3-green);
+  opacity: 0.65;
+  transition: opacity 0.2s ease;
+}
+
+.v3-locale a:hover {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Hero — full viewport, dot-grid background, flex column layout
+   -------------------------------------------------------------------------- */
+.v3-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 6rem var(--v3-page-px) 4rem;
+  background:
+    radial-gradient(
+      circle,
+      rgba(47, 111, 78, 0.04) 1px,
+      transparent 1px
+    );
+  background-size: 24px 24px;
+  background-color: var(--v3-white);
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Hero content — centered text block
+   -------------------------------------------------------------------------- */
+.v3-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+/* Kicker — monospace code-like label */
+.v3-kicker {
+  margin: 0 0 1.25rem;
+  font-family: var(--v3-font-mono);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--v3-green);
+
+  animation: v3-fadeUp 0.7s ease both;
+  animation-delay: 0.1s;
+}
+
+/* Headline — DM Sans bold, massive */
+.v3-headline {
+  margin: 0 0 1.5rem;
+  font-family: var(--v3-font-body);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--v3-dark);
+
+  animation: v3-fadeUp 0.7s ease both;
+  animation-delay: 0.2s;
+}
+
+/* Subtitle */
+.v3-sub {
+  margin: 0 0 2.25rem;
+  max-width: 36rem;
+  font-family: var(--v3-font-body);
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--v3-muted);
+
+  animation: v3-fadeUp 0.7s ease both;
+  animation-delay: 0.35s;
+}
+
+/* CTA button — green bg, sharp corners */
+.v3-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2.25rem;
+  font-family: var(--v3-font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--v3-white);
+  background: var(--v3-green);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 16px rgba(47, 111, 78, 0.2);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+  animation: v3-fadeUp 0.7s ease both;
+  animation-delay: 0.5s;
+}
+
+.v3-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(47, 111, 78, 0.28);
+  background: var(--v3-green-hover);
+}
+
+.v3-cta:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(47, 111, 78, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Counters — the hero's impact numbers
+   -------------------------------------------------------------------------- */
+.v3-counters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 64rem;
+  margin: 3.5rem auto 0;
+}
+
+.v3-counter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 2rem 1.75rem;
+  background: var(--v3-pale);
+  border-radius: 1rem;
+
+  animation: v3-fadeUp 0.7s ease both;
+}
+
+.v3-counter:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.v3-counter:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.v3-counter:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+/* Giant monospace number */
+.v3-counter-value {
+  font-family: var(--v3-font-mono);
+  font-weight: 700;
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--v3-dark);
+}
+
+/* Unit label next to the number */
+.v3-counter-unit {
+  font-family: var(--v3-font-mono);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--v3-green);
+  margin-top: 0.15rem;
+}
+
+/* Description beneath */
+.v3-counter-label {
+  font-family: var(--v3-font-body);
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--v3-muted);
+  max-width: 22rem;
+  margin-top: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   Timeline section — dark green background
+   -------------------------------------------------------------------------- */
+.v3-timeline {
+  padding: var(--v3-section-py) var(--v3-page-px);
+  background: var(--v3-dark);
+  color: var(--v3-white);
+}
+
+.v3-section-title {
+  margin: 0 0 3rem;
+  font-family: var(--v3-font-body);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.v3-timeline .v3-section-title {
+  color: var(--v3-white);
+}
+
+/* Timeline items container */
+.v3-timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+/* Vertical line */
+.v3-timeline-items::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0.5rem;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1px;
+}
+
+/* Single timeline row */
+.v3-timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.75rem 0;
+  position: relative;
+}
+
+.v3-timeline-item:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Dot on the line */
+.v3-timeline-marker {
+  position: absolute;
+  left: -2rem;
+  top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v3-timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--v3-green);
+  border: 3px solid var(--v3-white);
+  box-shadow: 0 0 0 2px var(--v3-green);
+  position: relative;
+  left: -2.5px;
+}
+
+/* Timeline text content */
+.v3-timeline-content h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--v3-font-mono);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  color: var(--v3-pale);
+}
+
+.v3-timeline-content p {
+  margin: 0;
+  font-family: var(--v3-font-body);
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 32rem;
+}
+
+/* --------------------------------------------------------------------------
+   Final CTA section
+   -------------------------------------------------------------------------- */
+.v3-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--v3-section-py) var(--v3-page-px);
+  background: var(--v3-white);
+}
+
+.v3-final-text {
+  margin: 0 0 2rem;
+  font-family: var(--v3-font-body);
+  font-weight: 500;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--v3-dark);
+}
+
+/* Monospace ">" prefix character */
+.v3-mono {
+  font-family: var(--v3-font-mono);
+  font-weight: 700;
+  color: var(--v3-green);
+  margin-right: 0.35rem;
+}
+
+.v3-final .v3-cta {
+  animation: none;
+}
+
+/* --------------------------------------------------------------------------
+   Desktop — wider padding, 3-column counters
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .v3 {
+    --v3-page-px: 4rem;
+  }
+
+  .v3-hero {
+    padding: 8rem var(--v3-page-px) 5rem;
+  }
+
+  .v3-counters {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 4.5rem;
+  }
+
+  .v3-counter {
+    padding: 2.25rem 2rem;
+  }
+
+  .v3-timeline-items {
+    padding-left: 2.5rem;
+  }
+
+  .v3-timeline-marker {
+    left: -2.5rem;
+  }
+
+  .v3-locale {
+    left: var(--v3-page-px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .v3 {
+    --v3-page-px: 6rem;
+  }
+
+  .v3-hero {
+    padding: 10rem var(--v3-page-px) 6rem;
+  }
+
+  .v3-counter {
+    padding: 2.5rem 2.25rem;
+  }
+
+  .v3-timeline-item {
+    padding: 2.25rem 0;
+  }
+
+  .v3-timeline-items {
+    padding-left: 3rem;
+  }
+
+  .v3-timeline-marker {
+    left: -3rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion — disable animations
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .v3-kicker,
+  .v3-headline,
+  .v3-sub,
+  .v3-cta,
+  .v3-counter {
+    animation: none;
+  }
+}

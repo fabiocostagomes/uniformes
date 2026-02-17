@@ -2,6 +2,7 @@ export type ListingStatus = 'active' | 'reserved' | 'sold' | 'archived' | 'remov
 
 export type ListingRecord = {
   id: string;
+  ownerId: string;
   title: string;
   description: string;
   size: string;
@@ -17,6 +18,7 @@ export type ListingRecord = {
 const MOCK_LISTINGS: ListingRecord[] = [
   {
     id: 'listing-001',
+    ownerId: 'owner-001',
     title: 'Polo oficial azul marinho',
     description: 'Pouco uso, sem manchas. Tamanho 8 anos.',
     size: '8 anos',
@@ -31,6 +33,7 @@ const MOCK_LISTINGS: ListingRecord[] = [
   },
   {
     id: 'listing-002',
+    ownerId: 'owner-002',
     title: 'Calcas de fato treino',
     description: 'Modelo unissexo, elasticos em bom estado.',
     size: '10 anos',
@@ -43,12 +46,31 @@ const MOCK_LISTINGS: ListingRecord[] = [
       'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=960&q=80',
     schoolName: 'Colegio Exemplo',
   },
+  {
+    id: 'listing-003',
+    ownerId: 'owner-003',
+    title: 'Casaco impermeavel',
+    description: 'Usado durante um periodo curto, muito estimado.',
+    size: '12 anos',
+    condition: 'Bom',
+    isFree: false,
+    priceCents: 1800,
+    whatsappPhone: '+351934000555',
+    status: 'sold',
+    imageUrl:
+      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=960&q=80',
+    schoolName: 'Colegio Exemplo',
+  },
 ];
 
 const VISIBLE_STATUS: ListingStatus[] = ['active', 'reserved'];
 
 export async function getVisibleListings(): Promise<ListingRecord[]> {
   return MOCK_LISTINGS.filter((listing) => VISIBLE_STATUS.includes(listing.status));
+}
+
+export async function getAllListings(): Promise<ListingRecord[]> {
+  return [...MOCK_LISTINGS];
 }
 
 export async function getVisibleListingById(

@@ -5,6 +5,7 @@ import SiteFooter from '../components/site-footer';
 
 import './theme.css';
 import './globals.css';
+import './landing.css';
 
 export const metadata: Metadata = {
   title: 'Uniformes do Colégio',

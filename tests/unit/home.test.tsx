@@ -5,11 +5,11 @@ import { describe, expect, it } from 'vitest';
 import HomePage from '../../app/page';
 
 describe('home page', () => {
-  it('renders title and login CTA for mobile-first hero', () => {
+  it('renders headline and login CTA for mobile-first hero', () => {
     render(<HomePage />);
 
     expect(
-      screen.getByRole('heading', { name: /uniformes do colégio/i }),
+      screen.getByRole('heading', { name: /fecha o ciclo/i }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole('link', { name: /entrar com google/i }),

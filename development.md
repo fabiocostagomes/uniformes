@@ -23,10 +23,10 @@
 ## Estado Atual (2026-02-17)
 
 - Branch atual: `main` (sincronizada com `origin/main`).
-- Ultimo commit: `83c66cb` (`docs: refresh development plan for long-session execution`).
-- Concluido: Tasks 0-4.
+- Ultimo commit: `59dc0e8` (`feat: add constrained image uploads`).
+- Concluido: Tasks 0-7.
 - Concluido extra: i18n day-one (`pt`/`en`) + design tokens centralizados em `app/theme.css`.
-- Proximo bloco alvo: Tasks 5-6.
+- Proximo bloco alvo: Tasks 8-9.
 - Nota DB: validacao atual via `test:db` (guard de migrations + RLS em SQL); quando `supabase` CLI estiver disponivel, adicionar validacao integrada local.
 - Comando de validacao rapida antes de continuar: `pnpm test:unit`.
 
@@ -37,9 +37,9 @@
 - [x] Task 2: Criar app Next.js com pnpm
 - [x] Task 3: Integrar Supabase Auth (Google)
 - [x] Task 4: Esquema DB + RLS base
-- [ ] Task 5: Convites de acesso por codigo
-- [ ] Task 6: Criacao de anuncio (sem imagens)
-- [ ] Task 7: Upload de imagens (max 3, WebP comprimido)
+- [x] Task 5: Convites de acesso por codigo
+- [x] Task 6: Criacao de anuncio (sem imagens)
+- [x] Task 7: Upload de imagens (max 3, WebP comprimido)
 - [ ] Task 8: Lista de anuncios + detalhe + contacto WhatsApp
 - [ ] Task 9: Moderacao minima por admin
 - [ ] Task 10: Politicas de privacidade e docs OSS
@@ -72,7 +72,7 @@
 - [ ] Confirmar workspace limpo: `git status -sb`
 - [ ] Correr baseline: `pnpm test:unit`
 - [ ] Confirmar projeto Supabase alvo: `rkzvnbcbwudcskufcnci`
-- [ ] Executar em lotes: Task 5 -> Task 6 (checkpoint) -> Task 7 -> Task 8 (checkpoint)
+- [ ] Executar em lotes: Task 8 -> Task 9 (checkpoint) -> Task 10 -> Task 10.1 (checkpoint)
 
 ### Template de handoff/retoma
 
@@ -436,7 +436,7 @@ Expected: PASS.
 
 `feat: add initial schema and rls policies`
 
-### [ ] Task 5: Convites de acesso por codigo
+### [x] Task 5: Convites de acesso por codigo
 
 **Files:**
 
@@ -464,7 +464,7 @@ Expected: PASS.
 **Step 5: Commit**
 `feat: add invite-code onboarding for first school`
 
-### [ ] Task 6: Criacao de anuncio (sem imagens)
+### [x] Task 6: Criacao de anuncio (sem imagens)
 
 **Files:**
 
@@ -493,7 +493,7 @@ Expected: PASS.
 **Step 5: Commit**
 `feat: add listing creation flow`
 
-### [ ] Task 7: Upload de imagens (max 3, WebP comprimido)
+### [x] Task 7: Upload de imagens (max 3, WebP comprimido)
 
 **Files:**
 

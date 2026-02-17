@@ -29,14 +29,14 @@ export default async function ListingsPage() {
     <main className="listings-shell">
       <header className="listings-header">
         <p className="hero-kicker">Comunidade escolar</p>
-        <h1 className="title">Anuncios de uniformes</h1>
+        <h1 className="title">Anúncios de uniformes</h1>
         <p className="lead">
           Apenas membros autenticados da escola conseguem ver e contactar outros
           pais.
         </p>
       </header>
 
-      <section className="listings-grid" aria-label="Lista de anuncios">
+      <section className="listings-grid" aria-label="Lista de anúncios">
         {listings.map((listing) => (
           <article className="listing-card" key={listing.id}>
             <img

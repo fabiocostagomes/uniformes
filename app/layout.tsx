@@ -7,7 +7,7 @@ import './theme.css';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Uniformes do Colegio',
+  title: 'Uniformes do Colégio',
   description: 'Marketplace de uniformes usados entre pais.',
 };
 

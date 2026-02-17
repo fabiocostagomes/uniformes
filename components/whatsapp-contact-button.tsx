@@ -18,7 +18,7 @@ export function buildWhatsAppLink(
 
   url.searchParams.set(
     'text',
-    `Olá! Vi o anuncio "${listingTitle}" na plataforma de uniformes. Ainda está disponível?`,
+    `Olá! Vi o anúncio "${listingTitle}" na plataforma de uniformes. Ainda está disponível?`,
   );
 
   return url.toString();

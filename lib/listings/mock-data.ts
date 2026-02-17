@@ -29,13 +29,13 @@ const MOCK_LISTINGS: ListingRecord[] = [
     status: 'active',
     imageUrl:
       'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=960&q=80',
-    schoolName: 'Colegio Exemplo',
+    schoolName: 'Colégio Exemplo',
   },
   {
     id: 'listing-002',
     ownerId: 'owner-002',
-    title: 'Calcas de fato treino',
-    description: 'Modelo unissexo, elasticos em bom estado.',
+    title: 'Calças de fato treino',
+    description: 'Modelo unissexo, elásticos em bom estado.',
     size: '10 anos',
     condition: 'Bom',
     isFree: true,
@@ -44,13 +44,13 @@ const MOCK_LISTINGS: ListingRecord[] = [
     status: 'reserved',
     imageUrl:
       'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=960&q=80',
-    schoolName: 'Colegio Exemplo',
+    schoolName: 'Colégio Exemplo',
   },
   {
     id: 'listing-003',
     ownerId: 'owner-003',
-    title: 'Casaco impermeavel',
-    description: 'Usado durante um periodo curto, muito estimado.',
+    title: 'Casaco impermeável',
+    description: 'Usado durante um período curto, muito estimado.',
     size: '12 anos',
     condition: 'Bom',
     isFree: false,
@@ -59,7 +59,7 @@ const MOCK_LISTINGS: ListingRecord[] = [
     status: 'sold',
     imageUrl:
       'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=960&q=80',
-    schoolName: 'Colegio Exemplo',
+    schoolName: 'Colégio Exemplo',
   },
 ];
 
@@ -86,8 +86,8 @@ export function formatListingPrice(
   isFree: boolean,
   priceCents: number | null,
 ): string {
-  if (isFree) return 'Gratis';
-  if (priceCents === null) return 'Preco a combinar';
+  if (isFree) return 'Grátis';
+  if (priceCents === null) return 'Preço a combinar';
 
   return `${(priceCents / 100).toFixed(2)} EUR`;
 }

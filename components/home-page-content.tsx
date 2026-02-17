@@ -14,7 +14,7 @@ export default function HomePageContent({ locale }: HomePageContentProps) {
 
   return (
     <main className="marketing-page">
-      <section className="marketing-card" aria-label="Apresentacao da iniciativa">
+      <section className="marketing-card" aria-label="Apresentação da iniciativa">
         <nav className="locale-switcher" aria-label="Language">
           <a href="/pt">{content.ptLabel}</a>
           <a href="/en">{content.enLabel}</a>

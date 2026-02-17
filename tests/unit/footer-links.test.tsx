@@ -9,10 +9,10 @@ describe('legal footer links', () => {
     render(<SiteFooter />);
 
     expect(
-      screen.getByRole('link', { name: /politica de privacidade/i }),
+      screen.getByRole('link', { name: /política de privacidade/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('link', { name: /termos de utilizacao/i }),
+      screen.getByRole('link', { name: /termos de utilização/i }),
     ).toBeInTheDocument();
   });
 });

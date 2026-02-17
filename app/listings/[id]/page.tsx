@@ -60,13 +60,13 @@ export default async function ListingDetailPage({ params }: ListingDetailPagePro
           </div>
 
           <div className="detail-actions">
-            <p className="muted">Contacto visivel apenas para utilizadores autenticados.</p>
+            <p className="muted">Contacto visível apenas para utilizadores autenticados.</p>
             <WhatsAppContactButton
               phoneNumber={listing.whatsappPhone}
               listingTitle={listing.title}
             />
             <a className="link-inline" href="/listings">
-              Voltar a listagem
+              Voltar à listagem
             </a>
           </div>
         </div>

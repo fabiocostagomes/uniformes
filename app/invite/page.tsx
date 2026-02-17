@@ -14,12 +14,12 @@ export default function InvitePage() {
   return (
     <main className="page">
       <section className="card" aria-label="Convite">
-        <h1 className="title">Entrar no colegio</h1>
+        <h1 className="title">Entrar no colégio</h1>
         <p className="lead">
-          Introduz o teu codigo de convite para acederes aos anuncios.
+          Introduz o teu código de convite para acederes aos anúncios.
         </p>
         <form action={redeemInviteAction} className="form-stack">
-          <label htmlFor="invite-code">Codigo de convite</label>
+          <label htmlFor="invite-code">Código de convite</label>
           <input
             id="invite-code"
             name="code"

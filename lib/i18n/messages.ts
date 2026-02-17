@@ -13,18 +13,18 @@ type HomeMessages = {
 
 const homeMessages: Record<Locale, HomeMessages> = {
   pt: {
-    heading: 'Uniformes do Colegio',
+    heading: 'Uniformes do Colégio',
     description:
-      'Troca e venda de uniformes usados entre pais, com foco em confianca e simplicidade.',
-    initiative: 'Iniciativa comunitaria e sustentavel.',
+      'Troca e venda de uniformes usados entre pais, com foco em confiança e simplicidade.',
+    initiative: 'Iniciativa comunitária e sustentável.',
     howItWorksTitle: 'Como funciona',
     howItWorksSteps: [
       '1. Entras com Google e validas o acesso da escola.',
-      '2. Publicas o teu anuncio com fotos comprimidas em WebP.',
+      '2. Publicas o teu anúncio com fotos comprimidas em WebP.',
       '3. Contactas diretamente no WhatsApp para combinar.',
     ],
     cta: 'Entrar com Google',
-    ptLabel: 'Portugues',
+    ptLabel: 'Português',
     enLabel: 'English',
   },
   en: {

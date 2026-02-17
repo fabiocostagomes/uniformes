@@ -34,10 +34,10 @@ describe('listings mobile flow', () => {
     render(React.createElement(HomePage));
 
     expect(
-      screen.getByRole('heading', { name: /uniformes do colegio/i }),
+      screen.getByRole('heading', { name: /uniformes do colégio/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/iniciativa comunitaria e sustentavel/i),
+      screen.getByText(/iniciativa comunitária e sustentável/i),
     ).toBeInTheDocument();
   });
 

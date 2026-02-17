@@ -1,4 +1,4 @@
-# Uniformes do Colegio
+# Uniformes do Colégio
 
 Plataforma web mobile-first para pais anunciarem uniformes usados com contacto via WhatsApp, com foco em sustentabilidade, simplicidade e custo zero operacional no MVP.
 
@@ -31,8 +31,8 @@ pnpm dev
 
 ## Privacidade e termos
 
-- Politica de privacidade: `/privacy`
-- Termos de utilizacao: `/terms`
+- Política de privacidade: `/privacy`
+- Termos de utilização: `/terms`
 
 Paginas internas autenticadas estao configuradas com `noindex`.
 

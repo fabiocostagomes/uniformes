@@ -14,7 +14,7 @@ export default function ListingForm() {
         />
         <input type="hidden" name="ownerId" value="anonymous" />
 
-        <label htmlFor="title">Titulo</label>
+        <label htmlFor="title">Título</label>
         <input id="title" name="title" required />
 
         <label htmlFor="size">Tamanho</label>
@@ -23,21 +23,21 @@ export default function ListingForm() {
         <label htmlFor="condition">Estado</label>
         <input id="condition" name="condition" />
 
-        <label htmlFor="description">Descricao</label>
+        <label htmlFor="description">Descrição</label>
         <input id="description" name="description" />
 
         <label htmlFor="whatsappPhone">WhatsApp</label>
         <input id="whatsappPhone" name="whatsappPhone" required />
 
         <label htmlFor="isFree">
-          <input id="isFree" name="isFree" type="checkbox" /> Gratis
+          <input id="isFree" name="isFree" type="checkbox" /> Grátis
         </label>
 
-        <label htmlFor="priceCents">Preco (centimos)</label>
+        <label htmlFor="priceCents">Preço (cêntimos)</label>
         <input id="priceCents" name="priceCents" type="number" min={0} />
 
         <button className="cta" type="submit">
-          Publicar anuncio
+          Publicar anúncio
         </button>
       </form>
 

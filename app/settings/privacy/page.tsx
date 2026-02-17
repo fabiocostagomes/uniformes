@@ -32,9 +32,9 @@ export default function PrivacySettingsPage() {
           </button>
         </form>
 
-        <h2 className="subtitle">Apagar anuncio</h2>
+        <h2 className="subtitle">Apagar anúncio</h2>
         <p className="muted">
-          A eliminacao do anuncio remove tambem ficheiros de imagem associados no
+          A eliminação do anúncio remove também ficheiros de imagem associados no
           storage.
         </p>
         <form action={deleteListingAction} className="form-stack">
@@ -43,7 +43,7 @@ export default function PrivacySettingsPage() {
           <input type="hidden" name="actorRole" value="member" />
           <input type="hidden" name="ownerId" value="anonymous" />
           <button className="cta" type="submit">
-            Apagar anuncio e imagens
+            Apagar anúncio e imagens
           </button>
         </form>
       </section>

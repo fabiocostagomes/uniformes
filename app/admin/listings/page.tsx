@@ -34,14 +34,14 @@ export default async function AdminListingsPage() {
   return (
     <main className="listings-shell">
       <header className="listings-header">
-        <p className="hero-kicker">Area de moderacao</p>
-        <h1 className="title">Moderar anuncios</h1>
+        <p className="hero-kicker">Área de moderação</p>
+        <h1 className="title">Moderar anúncios</h1>
         <p className="lead">
-          Apenas utilizadores admin podem ocultar anuncios da comunidade.
+          Apenas utilizadores admin podem ocultar anúncios da comunidade.
         </p>
       </header>
 
-      <section className="listings-grid" aria-label="Painel de moderacao">
+      <section className="listings-grid" aria-label="Painel de moderação">
         {listings.map((listing) => (
           <article className="listing-card" key={listing.id}>
             <img
@@ -69,7 +69,7 @@ export default async function AdminListingsPage() {
                 <input type="hidden" name="currentStatus" value={listing.status} />
                 <input type="hidden" name="nextStatus" value="removed" />
                 <button className="cta" type="submit">
-                  Ocultar anuncio
+                  Ocultar anúncio
                 </button>
               </form>
             </div>
